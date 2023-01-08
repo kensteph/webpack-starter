@@ -17,7 +17,16 @@ module.exports = {
   module: {
     rules: [
       // Any file ends by this extention,we will use these loaders
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.scss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      // Rule for babel | exclude the node_modules folder
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: { presets: ['@babel/preset-env'] },
+        },
+      },
     ],
   },
 
