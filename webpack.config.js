@@ -29,4 +29,21 @@ module.exports = {
       template: './src/template.html',
     }),
   ],
+
+  // Configure our devServer
+  devServer: {
+    static: {
+      // The directory where our server will look at
+      directory: path.resolve(__dirname, 'dist'),
+      // Port
+      port: 8788,
+      // Hot reload
+      hot: true,
+      // Open the browser
+      open: true,
+      // Compression
+      compress: true,
+      historyApiFallback: true,
+    },
+  },
 };
