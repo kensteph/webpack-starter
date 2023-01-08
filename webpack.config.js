@@ -12,6 +12,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    // In order to keep the original assets'name (like lol.jpg)
+    assetModuleFilename: '[name][ext]',
   },
   // Manage the loaders
   module: {
@@ -27,6 +29,8 @@ module.exports = {
           options: { presets: ['@babel/preset-env'] },
         },
       },
+      // Configure loader to use IMG
+      { test: /\.(png|svg|jpeg|jpg|gif)$/i, type: 'asset/resource' },
     ],
   },
 
