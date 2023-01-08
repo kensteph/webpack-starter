@@ -1,4 +1,6 @@
 const path = require('path');
+// Use of the html-webpack-plugin
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,4 +20,9 @@ module.exports = {
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
+
+  // Manage the plugins
+  plugins: [
+    new HtmlWebpackPlugin({ title: 'Webpack App', filename: 'index.html' }),
+  ],
 };
