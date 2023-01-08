@@ -29,21 +29,23 @@ module.exports = {
       template: './src/template.html',
     }),
   ],
+  // For debugging purpose
+  devtool: 'source-map',
 
   // Configure our devServer
   devServer: {
     static: {
       // The directory where our server will look at
       directory: path.resolve(__dirname, 'dist'),
-      // Port
-      port: 8788,
-      // Hot reload
-      hot: true,
-      // Open the browser
-      open: true,
-      // Compression
-      compress: true,
-      historyApiFallback: true,
     },
+    // Port
+    port: 8788,
+    // Hot reload
+    hot: true,
+    // Open the browser
+    open: true,
+    // Compression
+    compress: true,
+    historyApiFallback: true,
   },
 };
